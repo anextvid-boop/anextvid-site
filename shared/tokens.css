@@ -1,0 +1,88 @@
+/* Official ANEXTVID Design System Tokens (from ANEXTVID_Design_System/src/styles/tokens.css) */
+:root, [data-anext-theme="blue-dark"] {
+  --anext-bg: #0B1220;
+  --anext-surface: #111E2F;
+  --anext-raised: #17283D;
+  --anext-primary: #0A66C2;
+  --anext-primary-hover: #1679D8;
+  --anext-accent: #60A5FA;
+  --anext-text: #F9FAFB;
+  --anext-muted: #A9B6C9;
+  --anext-border: #30445D;
+  --anext-radius-sm: 8px;
+  --anext-radius-md: 12px;
+  --anext-radius-lg: 16px;
+  --anext-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  --anext-focus: 0 0 0 3px rgba(96, 165, 250, 0.55);
+}
+
+[data-anext-theme="blue-light"] {
+  --anext-bg: #F7F9FC;
+  --anext-surface: #FFFFFF;
+  --anext-raised: #F0F4F9;
+  --anext-primary: #0A66C2;
+  --anext-primary-hover: #084F96;
+  --anext-accent: #2563EB;
+  --anext-text: #101827;
+  --anext-muted: #536174;
+  --anext-border: #D5DFEB;
+  --anext-shadow: 0 6px 20px rgba(16, 24, 39, 0.08);
+  --anext-focus: 0 0 0 3px rgba(37, 99, 235, 0.35);
+}
+
+[data-anext-theme="rich-purple"] {
+  --anext-bg: #07050B;
+  --anext-surface: #130A20;
+  --anext-raised: #24103E;
+  --anext-primary: #5B21B6;
+  --anext-primary-hover: #6D28D9;
+  --anext-accent: #A78BFA;
+  --anext-text: #F8F5F9;
+  --anext-muted: #C7B8CA;
+  --anext-border: #35214D;
+  --anext-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  --anext-focus: 0 0 0 3px rgba(167, 139, 250, 0.45);
+}
+
+.anext-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: var(--anext-radius-sm);
+  border: 1px solid transparent;
+  font: 600 14px/1.2 inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 160ms, border-color 160ms, background 160ms;
+}
+
+.anext-button--primary {
+  color: #fff;
+  background: linear-gradient(180deg, var(--anext-primary-hover), var(--anext-primary));
+  border-color: var(--anext-primary-hover);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.anext-button--secondary {
+  color: var(--anext-text);
+  background: var(--anext-raised);
+  border-color: var(--anext-border);
+}
+
+.anext-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.22), 0 0 0 1px var(--anext-accent);
+}
+
+.anext-button:focus-visible {
+  outline: none;
+  box-shadow: var(--anext-focus);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anext-button { transition: none; }
+  .anext-button:hover:not(:disabled) { transform: none; }
+}

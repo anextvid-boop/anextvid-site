@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Allow OpenAI ChatGPT Search citations
+User-agent: OAI-SearchBot
+Allow: /
+
+# Opt out of AI model training crawls (change to Allow: / if you want to opt in)
+User-agent: GPTBot
+Disallow: /
+
+Sitemap: https://anextvid.com/sitemap.xml

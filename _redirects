@@ -1,0 +1,12 @@
+/about /#contact 301
+/about/ /#contact 301
+/contact-us /#contact 301
+/contact-us/ /#contact 301
+/gallery-page-2 /#selected-work 301
+/gallery-page-2/ /#selected-work 301
+/terms-and-conditions / 301
+/terms-and-conditions/ / 301
+/2024/* / 301
+/v1/* / 301
+/v2/* / 301
+/v3/* / 301
