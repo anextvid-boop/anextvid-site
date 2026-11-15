@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commercial &amp; Social Campaign — Case Study | ANEXTVID</title>
+  <meta name="description" content="Case study: Commercial and social video marketing production cut for multi-platform distribution." />
+  <link rel="canonical" href="https://anextvid.com/work/commercial-social-campaign/" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/png" href="../../assets/images/anextvid.png" />
+  <link rel="stylesheet" href="../../shared/tokens.css" />
+  <link rel="stylesheet" href="../../style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Commercial & Social Campaign",
+    "creator": { "@type": "Person", "name": "Jahronimo Ellis" },
+    "publisher": { "@type": "Organization", "name": "ANEXTVID", "url": "https://anextvid.com/" },
+    "url": "https://anextvid.com/work/commercial-social-campaign/"
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="../../" class="brand" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+        <img src="../../assets/images/anextvid.png" alt="ANEXTVID logo" width="32" height="32" style="width:32px;height:32px;border-radius:8px;object-fit:cover;" />
+        <span>ANEXTVID</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../../#selected-work">Selected Work</a>
+        <a href="../../services/one-off-production/">One-Off Production</a>
+        <a href="../../#contact" class="btn btn-neon" data-track-cta="case_comm_talk_project">Talk through a project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section" style="padding-top:48px;">
+    <div class="container" style="max-width:920px;">
+      <p class="eyebrow">Case Study • Video Marketing &amp; Campaign</p>
+      <h1 style="margin-top:8px;">Commercial &amp; Social Campaign</h1>
+
+      <div class="case-hero-media" id="case-player" data-yt-id="R_Sp1-Hm8zU" role="button" tabindex="0" aria-label="Watch Commercial and Social Campaign film" style="margin-top:22px;position:relative;cursor:pointer;">
+        <img src="https://i.ytimg.com/vi/R_Sp1-Hm8zU/hqdefault.jpg" alt="Commercial and Social Campaign frame" width="1280" height="720" style="view-transition-name:work-thumb-commercial-social-campaign;" />
+        <button type="button" class="hero-feature-play" aria-label="Watch film">▶</button>
+      </div>
+
+      <div class="grid-2" style="margin-top:28px;">
+        <article class="card"><h3>The Brief</h3><p>Create a high-energy hero campaign film alongside cut-down social edits that hold attention across paid and organic feeds.</p></article>
+        <article class="card"><h3>My Role</h3><p>Production planning, filming, pacing and edit direction, motion graphics and aspect-ratio mastering.</p></article>
+        <article class="card"><h3>Deliverables</h3><p>Primary campaign film (16:9) plus vertical social cut-downs ready for LinkedIn, Instagram and YouTube Shorts.</p></article>
+        <article class="card"><h3>How It Was Used</h3><p>Deployed as the anchor campaign asset across landing pages and social distribution.</p></article>
+      </div>
+
+      <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="../../?service=one-off-production#contact" class="btn btn-neon" data-track-cta="case_comm_bottom_cta">Talk through a project</a>
+        <a href="../../services/one-off-production/" class="btn btn-ghost">See One-Off Production →</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../shared/analytics.js" defer></script>
+  <script src="../../shared/site-data.js" defer></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const p = document.getElementById("case-player");
+      const play = () => {
+        if (p && !p.dataset.playing && window.mountTrackedYouTube) {
+          p.dataset.playing = "1";
+          window.mountTrackedYouTube(p, p.dataset.ytId, "Commercial & Social Campaign");
+        }
+      };
+      if (p) {
+        p.addEventListener("click", play);
+        p.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); play(); } });
+      }
+    });
+  </script>
+</body>
+</html>

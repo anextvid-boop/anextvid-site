@@ -3,18 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ANEXTVID — Video Production, Photography &amp; LinkedIn Content</title>
-  <meta name="description" content="Video production, photography and LinkedIn content for founders and B2B teams. Brighton, UK & worldwide." />
+  <title>ANEXTVID — Video Production, Photography &amp; LinkedIn Content for B2B Founders</title>
+  <meta name="description" content="Brighton-based video production, photography and ongoing LinkedIn content for busy founders and B2B teams. 12-month content partnerships and one-off productions." />
   <link rel="canonical" href="https://anextvid.com/" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ANEXTVID — Video, Photography &amp; LinkedIn Content for B2B Founders" />
+  <meta property="og:description" content="Turn the work you already do into vertical clips, YouTube videos, brand films, product demos and photography. Based in Brighton, working across the UK." />
+  <meta property="og:url" content="https://anextvid.com/" />
+  <meta property="og:image" content="https://anextvid.com/assets/images/hero-feature.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" href="./assets/images/anextvid.png" />
 
-  <!-- Open Graph / LinkedIn / WhatsApp Preview -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://anextvid.com/" />
-  <meta property="og:title" content="ANEXTVID — Show What Goes Into The Work" />
-  <meta property="og:description" content="Video production, photography and LinkedIn content for founders and B2B teams." />
-  <meta property="og:image" content="https://anextvid.com/assets/images/about-us.png" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./shared/tokens.css" />
+  <link rel="stylesheet" href="./style.css" />
 
   <script type="application/ld+json">
   {
@@ -22,489 +27,397 @@
     "@graph": [
       {
         "@type": "ProfessionalService",
-        "@id": "https://anextvid.com/#business",
+        "@id": "https://anextvid.com/#organization",
         "name": "ANEXTVID",
         "url": "https://anextvid.com/",
         "logo": "https://anextvid.com/assets/images/anextvid.png",
-        "image": "https://anextvid.com/assets/images/about-us.png",
-        "description": "Brighton-based studio for B2B video production, SaaS explainers and product demos, photography, founder personal branding, and ongoing LinkedIn content.",
-        "founder": {
-          "@type": "Person",
-          "name": "Jahronimo Ellis"
-        },
+        "image": "https://anextvid.com/assets/images/hero-feature.webp",
+        "description": "Video production, photography and LinkedIn content partnerships for busy founders and B2B teams in Brighton and across the UK.",
         "email": "Anextvid@gmail.com",
         "telephone": "+447538068550",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Brighton",
+          "addressRegion": "East Sussex",
           "addressCountry": "GB"
         },
-        "areaServed": ["Brighton", "United Kingdom"],
-        "sameAs": [
-          "https://www.instagram.com/anextvid.general/",
-          "https://www.tiktok.com/tag/anextvid",
-          "https://www.facebook.com/profile.php?id=100083274854054",
-          "https://theboldeststudio.com/"
-        ]
+        "areaServed": ["Brighton", "Sussex", "London", "United Kingdom"],
+        "founder": { "@type": "Person", "name": "Jahronimo Ellis" }
       },
       {
-        "@type": "VideoObject",
-        "name": "ANEXTVID — Featured Brand & Content Production",
-        "description": "Showreel and featured B2B video production work by ANEXTVID in Brighton, UK.",
-        "thumbnailUrl": "https://i.ytimg.com/vi/Ow0lct6Ft_U/hqdefault.jpg",
-        "embedUrl": "https://www.youtube.com/embed/Ow0lct6Ft_U",
-        "url": "https://anextvid.com/watch/showreel/",
-        "uploadDate": "2024-11-16"
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much founder time is needed?",
+            "acceptedAnswer": { "@type": "Answer", "text": "We agree realistic time commitments during discovery—typically one focused recording block rather than constant ad-hoc filming." }
+          },
+          {
+            "@type": "Question",
+            "name": "How are shoots organised?",
+            "acceptedAnswer": { "@type": "Answer", "text": "You receive a clear prep sheet and shot plan ahead of time so filming stays calm, structured and fast." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do approvals work?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Every deliverable goes through reviewable drafts with two included revision rounds before final sign-off." }
+          }
+        ]
       }
     ]
   }
   </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <header class="topbar" id="v2-topbar">
+  <div class="scroll-progress" id="v2-progress" aria-hidden="true"></div>
+
+  <header class="topbar">
     <div class="container topbar-inner">
-      <a href="#top"><img src="./assets/images/anextvid.png" alt="ANEXTVID" width="500" height="150" /></a>
-      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="v2-nav">Menu</button>
-      <nav id="v2-nav" class="nav">
+      <a href="/" class="brand" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+        <img src="./assets/images/anextvid.png" alt="ANEXTVID logo" width="32" height="32" style="width:32px;height:32px;border-radius:8px;object-fit:cover;" />
+        <span>ANEXTVID</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
         <a href="#hero-feature">Showreel</a>
         <a href="#who-how">How It Helps</a>
         <a href="#selected-work">Selected Work</a>
         <a href="#assemble-lab">One Story</a>
-        <a href="#services">Services</a>
-        <a href="#contact" class="btn btn-neon">Talk through a project</a>
+        <a href="#contact" class="btn btn-neon" data-track-cta="header_talk_project">Talk through a project</a>
       </nav>
     </div>
-    <div class="scroll-progress-bar" id="v2-progress" aria-hidden="true"></div>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
+  <main>
     <section class="hero">
-      <video id="v2-hero-video" class="hero-video" autoplay muted loop playsinline poster="./assets/images/about-us.png">
-        <source src="./assets/videos/neon-pink-and-black-futuristic-artificial-intelligence-automation-video-2.mp4" type="video/mp4" />
+      <video id="v2-hero-video" class="hero-video" autoplay muted loop playsinline preload="metadata" poster="./assets/images/about-us.png">
+        <source src="./assets/videos/hero-loop.mp4" type="video/mp4" />
       </video>
       <div class="hero-scrim"></div>
+      <button type="button" id="hero-video-toggle" class="hero-media-toggle" aria-pressed="false" aria-controls="v2-hero-video">Pause background</button>
+
       <div class="container hero-content">
-        <span class="eyebrow">ANEXTVID • Video, Photography &amp; LinkedIn Content</span>
+        <p class="eyebrow" style="margin-bottom:14px;">Brighton &amp; UK B2B • Video, Photography &amp; LinkedIn</p>
         <h1 class="js-kinetic-hero">
-          <span class="word">Show</span> <span class="word">what</span> <span class="word">goes</span> <span class="word">into</span> <span class="word accent-word">the</span> <span class="word accent-word">work.</span>
+          <span class="word">Show the work</span> <span class="word">you’re already doing.</span> <span class="word">Build trust</span> <span class="word">every month.</span>
         </h1>
-        <p class="hero-sub">Video production, photography and LinkedIn content for founders and B2B teams.</p>
+        <p class="hero-sub">We start with what you’re building, who needs to see it and what time you can realistically commit. Then we turn one shoot into LinkedIn, YouTube and website assets.</p>
         <div class="hero-cta">
-          <a href="#selected-work" class="btn btn-neon">See the work</a>
-          <a href="#contact" class="btn btn-ghost">Talk through a project</a>
-          <button type="button" class="btn btn-ghost js-showreel-v2">Watch the showreel</button>
+          <a href="#contact" class="btn btn-neon" data-track-cta="hero_talk_project">Talk through a project</a>
+          <a href="#selected-work" class="btn btn-ghost" data-track-cta="hero_see_work">See Selected Work</a>
         </div>
-
         <div class="clarity-strip">
-          <div class="clarity-item js-clarity-box">
-            <span>01 • What It Is</span>
-            <strong>Video, Stills &amp; Motion</strong>
-            <p>Cinema-grade brand films, photography, and motion graphics.</p>
+          <div class="clarity-box js-clarity-box">
+            <strong>Main Offer: 12-Month Partnership</strong>
+            <span>Ongoing LinkedIn, YouTube &amp; web content</span>
           </div>
-          <div class="clarity-item js-clarity-box">
-            <span>02 • Who It's For</span>
-            <strong>Founders &amp; B2B Teams</strong>
-            <p>Corporate &amp; finance leaders, plus ambitious brands ready to stand out.</p>
+          <div class="clarity-box js-clarity-box">
+            <strong>Second Route: One-Off Shoot</strong>
+            <span>Brand films, product demos &amp; photography</span>
           </div>
-          <div class="clarity-item js-clarity-box">
-            <span>03 • How It Helps</span>
-            <strong>One Shoot → Full Pipeline</strong>
-            <p>Turns your real work into LinkedIn, YouTube, and web assets that build trust.</p>
+          <div class="clarity-box js-clarity-box">
+            <strong>Scope Agreed in Discovery</strong>
+            <span>Built around your real calendar</span>
           </div>
         </div>
-
-        <button type="button" class="motion-toggle" id="v2-video-toggle" aria-pressed="false">Pause background video</button>
       </div>
     </section>
 
-    <!-- VIDEO FRAME EXPANSION (#hero-feature) -->
+    <!-- Continuous Sequence Part 1: Expanding Showreel Frame -->
     <section id="hero-feature" class="hero-feature-section">
       <div class="container">
-        <span class="eyebrow">Featured Brand &amp; Content Production</span>
         <div class="hero-feature-frame" id="v2-hero-feature" data-yt-id="Ow0lct6Ft_U" role="button" tabindex="0" aria-label="Play Featured Brand and Content Production video">
-          <img src="https://i.ytimg.com/vi/Ow0lct6Ft_U/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/Ow0lct6Ft_U/hqdefault.jpg'" alt="Featured Brand & Content Production" width="1280" height="720" />
+          <img src="./assets/images/hero-feature.webp" alt="Featured brand and content production frame" width="1600" height="800" loading="eager" style="width:100%;height:100%;object-fit:cover;display:block;" />
           <div class="hero-feature-overlay">
+            <span class="hero-feature-badge">Showreel • Click to play</span>
             <h2>Featured Brand &amp; Content Production</h2>
-            <p style="color:var(--muted);max-width:56ch;">Click to play the full flagship production directly in-frame.</p>
           </div>
           <button type="button" class="hero-feature-play" aria-label="Play Featured Production">▶</button>
         </div>
       </div>
     </section>
 
-    <!-- SCROLL-RESPONSIVE TICKER -->
-    <div class="ticker-band" aria-hidden="true">
-      <div class="ticker-track" id="v2-ticker-track">
-        <span class="ticker-copy">ONE STORY, MANY FORMATS • VIDEO PRODUCTION • PHOTOGRAPHY • MOTION GRAPHICS • LINKEDIN B2B CONTENT • BRIGHTON UK •&nbsp;</span>
-        <span class="ticker-copy">ONE STORY, MANY FORMATS • VIDEO PRODUCTION • PHOTOGRAPHY • MOTION GRAPHICS • LINKEDIN B2B CONTENT • BRIGHTON UK •&nbsp;</span>
-        <span class="ticker-copy">ONE STORY, MANY FORMATS • VIDEO PRODUCTION • PHOTOGRAPHY • MOTION GRAPHICS • LINKEDIN B2B CONTENT • BRIGHTON UK •&nbsp;</span>
+    <!-- Continuous Sequence Part 2: Slow Pausable Marquee + Scroll Velocity -->
+    <div class="ticker-band-wrap">
+      <div class="ticker-band" aria-hidden="true">
+        <div class="ticker-track" id="v2-ticker-track">
+          <span class="ticker-copy">ONE STORY, MANY FORMATS • VERTICAL CLIPS • YOUTUBE • BRAND FILMS • PRODUCT DEMOS • PHOTOGRAPHY • BRIGHTON UK •&nbsp;</span>
+          <span class="ticker-copy">ONE STORY, MANY FORMATS • VERTICAL CLIPS • YOUTUBE • BRAND FILMS • PRODUCT DEMOS • PHOTOGRAPHY • BRIGHTON UK •&nbsp;</span>
+          <span class="ticker-copy">ONE STORY, MANY FORMATS • VERTICAL CLIPS • YOUTUBE • BRAND FILMS • PRODUCT DEMOS • PHOTOGRAPHY • BRIGHTON UK •&nbsp;</span>
+        </div>
       </div>
+      <button type="button" id="ticker-toggle" class="ticker-toggle" aria-pressed="false" aria-label="Pause scrolling banner">Pause ticker</button>
     </div>
 
-    <!-- BENTO CARD MOTION + POINTER SPOTLIGHT (#who-how) -->
-    <section id="who-how">
-      <div class="container bento-2" id="v2-bento">
-        <div class="bento-violet js-bento-left" id="v2-spotlight-card">
-          <div>
-            <span class="eyebrow">Positioning &amp; Messaging</span>
-            <h2>“I help founders turn the work they already do into LinkedIn content.”</h2>
-          </div>
-          <p>
-            Most B2B teams don't lack expertise—they lack visual proof. We step in to capture your real work on camera and turn it into clear, high-trust video and photography.
-          </p>
-        </div>
-        <div class="bento-paper js-bento-right">
-          <div>
-            <span style="font-family:var(--font-head);font-size:0.78rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#6d28d9;display:block;margin-bottom:0.9rem;">Why It Works</span>
-            <h2>High-Contrast Authority</h2>
-          </div>
-          <div>
-            <p>Instead of generic stock posts, we pair your flagship brand film with short-form clips, studio portraits, and founder stories—built for LinkedIn, YouTube, and pitch decks.</p>
-            <a href="#assemble-lab" style="color:#6d28d9;font-weight:700;text-decoration:none;">See how one shoot multiplies →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SELECTED WORK -->
-    <section id="selected-work" style="background:#080510;border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+    <!-- Continuous Sequence Part 3: One Story. Many Formats. -->
+    <section id="assemble-lab" class="section">
       <div class="container">
-        <span class="eyebrow">Selected Work</span>
-        <div class="section-head">
-          <h2 class="js-mask-heading"><span class="mask-line"><span class="mask-inner">Featured Productions</span></span></h2>
-          <p>Click any frame to load and play the YouTube production on demand.</p>
+        <p class="eyebrow">One Recording Session → Multi-Channel Output</p>
+        <h2 class="js-mask-heading"><span class="mask-inner">One story. Many formats.</span></h2>
+        <p class="lead" style="margin-top:10px;max-width:700px;">One planned shoot gives your team material for LinkedIn, YouTube, sales decks and the website—without repeating yourself every week.</p>
+
+        <div class="assemble-grid" id="v2-assemble" style="margin-top:28px;">
+          <figure class="assemble-item js-assemble-item">
+            <svg viewBox="0 0 120 72" width="120" height="72" aria-hidden="true"><rect class="js-draw" x="12" y="10" width="96" height="52" rx="8" fill="none" stroke="#a855f7" stroke-width="2.5"/><polygon class="js-draw" points="52,25 74,36 52,47" fill="none" stroke="#f4f1ea" stroke-width="2.5"/></svg>
+            <figcaption><strong>Brand Films &amp; YouTube</strong><span>Long-form authority &amp; demos</span></figcaption>
+          </figure>
+          <figure class="assemble-item js-assemble-item">
+            <svg viewBox="0 0 120 72" width="120" height="72" aria-hidden="true"><rect class="js-draw" x="42" y="6" width="36" height="60" rx="8" fill="none" stroke="#a855f7" stroke-width="2.5"/><line class="js-draw" x1="52" y1="54" x2="68" y2="54" stroke="#f4f1ea" stroke-width="2.5"/></svg>
+            <figcaption><strong>Vertical Clips</strong><span>LinkedIn, Reels &amp; Shorts</span></figcaption>
+          </figure>
+          <figure class="assemble-item js-assemble-item">
+            <svg viewBox="0 0 120 72" width="120" height="72" aria-hidden="true"><rect class="js-draw" x="20" y="14" width="80" height="46" rx="8" fill="none" stroke="#a855f7" stroke-width="2.5"/><circle class="js-draw" cx="60" cy="37" r="13" fill="none" stroke="#f4f1ea" stroke-width="2.5"/></svg>
+            <figcaption><strong>Photography</strong><span>Editorial stills &amp; founder portraits</span></figcaption>
+          </figure>
+          <figure class="assemble-item js-assemble-item">
+            <svg viewBox="0 0 120 72" width="120" height="72" aria-hidden="true"><rect class="js-draw" x="18" y="12" width="84" height="48" rx="8" fill="none" stroke="#a855f7" stroke-width="2.5"/><line class="js-draw" x1="32" y1="28" x2="88" y2="28" stroke="#f4f1ea" stroke-width="2.5"/><line class="js-draw" x1="32" y1="42" x2="72" y2="42" stroke="#f4f1ea" stroke-width="2.5"/></svg>
+            <figcaption><strong>LinkedIn Content</strong><span>Consistent founder presence</span></figcaption>
+          </figure>
         </div>
-        <div id="yt-v2" class="yt-grid"></div>
       </div>
     </section>
 
-    <!-- VECTOR STROKE DRAWING + ASSEMBLING GRID (#v2-assemble) -->
-    <section id="assemble-lab">
+    <!-- Founder Portrait Study + Two Clear Offers -->
+    <section id="who-how" class="section" style="background:#080510;border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
       <div class="container">
-        <span class="eyebrow">One Story, Many Formats</span>
-        <div class="section-head">
-          <h2 class="js-mask-heading"><span class="mask-line"><span class="mask-inner">Assembling Frame Grid</span></span></h2>
-          <p>Scroll down and back up—each 2D deliverable frame draws and locks into place to show how one focused shoot becomes four distinct assets.</p>
-        </div>
+        <p class="eyebrow">Founder Spotlight &amp; Two Clear Offers</p>
+        <h2 class="js-mask-heading"><span class="mask-inner">Led by Jahronimo Ellis in Brighton</span></h2>
 
-        <div class="case-meta-grid" id="v2-case-meta">
-          <div class="case-meta-card js-meta-box">
-            <strong>The Brief</strong>
-            <p>Turn a founder's day-to-day expertise into consistent video, photography, and LinkedIn proof.</p>
+        <div class="founder-study">
+          <div class="founder-portrait-stage" id="founder-portrait-stage">
+            <div class="founder-layer-bg" aria-hidden="true"></div>
+            <img src="./assets/images/about-us.png" alt="Jahronimo Ellis, founder of ANEXTVID" class="founder-layer-fg" width="800" height="1000" loading="lazy" />
+            <div class="founder-depth-badge">Jahronimo Ellis • Brighton, UK</div>
           </div>
-          <div class="case-meta-card js-meta-box">
-            <strong>My Role</strong>
-            <p>Creative direction, on-location cinema shoot, editorial stills, and post-production (Jahronimo Ellis).</p>
+
+          <div>
+            <p class="lead">Busy founders rarely lack expertise—they lack a repeatable production rhythm that respects their diary.</p>
+            <div class="offer-routes" style="grid-template-columns:1fr;margin-top:18px;">
+              <article class="offer-route-card offer-route-card--primary">
+                <div>
+                  <span class="offer-badge">Main Ongoing Offer</span>
+                  <h3>12-Month Content Partnership</h3>
+                  <p style="margin-top:6px;color:var(--text-secondary);">Discovery → shoot plan around your time → filming → approvals → multi-channel delivery &amp; quarterly review.</p>
+                  <details class="service-expand">
+                    <summary>What happens in a 12-month partnership?</summary>
+                    <p>We agree cadence in discovery, batch-film real work and founder insight, and deliver LinkedIn clips, YouTube videos and stills on a predictable schedule.</p>
+                  </details>
+                </div>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                  <a href="#contact" class="btn btn-neon" data-track-cta="offer_12m_enquire">Talk through a project</a>
+                  <a href="./services/12-month-content-partnership/" class="btn btn-ghost">Read 12-month guide →</a>
+                </div>
+              </article>
+
+              <article class="offer-route-card">
+                <div>
+                  <span class="offer-badge">Second Route</span>
+                  <h3>One-Off Production</h3>
+                  <p style="margin-top:6px;color:var(--text-secondary);">Brand films, SaaS product demos, founder interviews and photography days scoped to a clear brief.</p>
+                  <details class="service-expand">
+                    <summary>What does a one-off shoot include?</summary>
+                    <p>Pre-production call, shoot day, edit, two revision rounds and masters formatted for web, social and sales.</p>
+                  </details>
+                </div>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                  <a href="./services/one-off-production/" class="btn btn-ghost">Explore one-off production →</a>
+                </div>
+              </article>
+            </div>
           </div>
-          <div class="case-meta-card js-meta-box">
-            <strong>What We Made</strong>
-            <p>1 flagship brand film, vertical social cuts, studio portraits, and LinkedIn post assets.</p>
-          </div>
-          <div class="case-meta-card js-meta-box">
-            <strong>Use &amp; Outcome</strong>
-            <p>Deployed across website, YouTube, and LinkedIn. <em>(Client metrics pending confirmation.)</em></p>
-          </div>
-        </div>
-
-        <div class="assemble-grid" id="v2-assemble">
-          <!-- 01: Main Film -->
-          <figure class="assemble-item js-assemble-item">
-            <div class="vector-stage">
-              <svg viewBox="0 0 180 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect class="js-draw" x="10" y="14" width="160" height="92" rx="8" stroke="#c4b5fd" stroke-width="2.5" fill="#140c24"/>
-                <rect class="js-draw" x="20" y="24" width="140" height="58" rx="4" fill="#1f1138" stroke="#7c3aed" stroke-width="1.5"/>
-                <polygon class="js-draw" points="82,42 82,64 102,53" fill="#ff2a85" stroke="#ff2a85" stroke-width="1.5"/>
-                <line class="js-draw" x1="20" y1="94" x2="118" y2="94" stroke="#7c3aed" stroke-width="3" stroke-linecap="round"/>
-                <circle class="js-draw" cx="118" cy="94" r="4" fill="#f8f7fc" stroke="#f8f7fc" stroke-width="1.5"/>
-                <line class="js-draw" x1="122" y1="94" x2="160" y2="94" stroke="#3b265e" stroke-width="3" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <figcaption><strong>01 / Main Film</strong>16:9 flagship cut for website &amp; YouTube.</figcaption>
-          </figure>
-
-          <!-- 02: Vertical Clips -->
-          <figure class="assemble-item js-assemble-item">
-            <div class="vector-stage">
-              <svg viewBox="0 0 180 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect class="js-draw" x="58" y="8" width="64" height="104" rx="10" fill="#140c24" stroke="#c4b5fd" stroke-width="2.5"/>
-                <rect class="js-draw" x="65" y="18" width="50" height="72" rx="4" fill="#1f1138" stroke="#ff2a85" stroke-width="1.5"/>
-                <polygon class="js-draw" points="84,45 84,61 98,53" fill="#f8f7fc" stroke="#f8f7fc" stroke-width="1.5"/>
-                <line class="js-draw" x1="76" y1="99" x2="104" y2="99" stroke="#7c3aed" stroke-width="3" stroke-linecap="round"/>
-                <rect class="js-draw" x="26" y="26" width="24" height="68" rx="4" stroke="#6d48ad" stroke-width="1.5"/>
-                <rect class="js-draw" x="130" y="26" width="24" height="68" rx="4" stroke="#6d48ad" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <figcaption><strong>02 / Vertical Clips</strong>9:16 hooks for LinkedIn, Reels &amp; TikTok.</figcaption>
-          </figure>
-
-          <!-- 03: Photography -->
-          <figure class="assemble-item js-assemble-item">
-            <div class="vector-stage">
-              <svg viewBox="0 0 180 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect class="js-draw" x="24" y="24" width="132" height="78" rx="10" fill="#140c24" stroke="#c4b5fd" stroke-width="2.5"/>
-                <path class="js-draw" d="M64 24L72 13H108L116 24" stroke="#c4b5fd" stroke-width="2.5" stroke-linejoin="round"/>
-                <circle class="js-draw" cx="90" cy="63" r="24" fill="#1f1138" stroke="#7c3aed" stroke-width="2.5"/>
-                <circle class="js-draw" cx="90" cy="63" r="12" stroke="#ff2a85" stroke-width="2"/>
-                <circle class="js-draw" cx="136" cy="40" r="4" fill="#ff2a85" stroke="#ff2a85" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <figcaption><strong>03 / Photography</strong>Studio portraits &amp; crisp editorial stills.</figcaption>
-          </figure>
-
-          <!-- 04: LinkedIn Content -->
-          <figure class="assemble-item js-assemble-item">
-            <div class="vector-stage">
-              <svg viewBox="0 0 180 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect class="js-draw" x="28" y="14" width="124" height="92" rx="8" fill="#140c24" stroke="#c4b5fd" stroke-width="2.5"/>
-                <circle class="js-draw" cx="50" cy="34" r="10" fill="#7c3aed" stroke="#c4b5fd" stroke-width="1.5"/>
-                <line class="js-draw" x1="68" y1="30" x2="128" y2="30" stroke="#f8f7fc" stroke-width="3" stroke-linecap="round"/>
-                <line class="js-draw" x1="68" y1="39" x2="106" y2="39" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round"/>
-                <rect class="js-draw" x1="40" y="52" width="100" height="34" rx="4" fill="#1f1138" stroke="#ff2a85" stroke-width="1.5"/>
-                <line class="js-draw" x1="40" y1="96" x2="82" y2="96" stroke="#c4b5fd" stroke-width="2.5" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <figcaption><strong>04 / LinkedIn Content</strong>Founder proof paired with real decisions.</figcaption>
-          </figure>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" style="background:#080510;border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+    <!-- Selected Work with Native View Transitions into Case Studies -->
+    <section id="selected-work" class="section">
       <div class="container">
-        <span class="eyebrow">Studio Offer</span>
-        <div class="section-head">
-          <h2>Video, Photography &amp; Ongoing B2B Content</h2>
-        </div>
-        <div class="cards" id="v2-services-grid">
-          <article class="panel js-service-card">
-            <span class="panel-num">01 • VIDEO PRODUCTION</span>
-            <h3>Brand, Motion &amp; AI Films</h3>
-            <p>On-location cinema shoots, motion graphics, and remote editing across corporate, finance, music, food, and specialist teams.</p>
-          </article>
-          <article class="panel js-service-card">
-            <span class="panel-num">02 • PHOTOGRAPHY</span>
-            <h3>Founder &amp; Editorial Stills</h3>
-            <p>Cohesive portraits and behind-the-scenes imagery for LinkedIn, websites, and pitch decks.</p>
-          </article>
-          <article class="panel js-service-card">
-            <span class="panel-num">03 • ONGOING B2B CONTENT</span>
-            <h3>3-, 6- &amp; 12-Month Retainers</h3>
-            <p>Consistent content pipelines that turn the work you already do into LinkedIn and social authority.</p>
-            <p style="margin-top:0.85rem;"><a href="./services/b2b-linkedin-content/" style="color:var(--violet-soft);font-weight:700;text-decoration:none;">Explore B2B LinkedIn Content →</a></p>
-          </article>
+        <p class="eyebrow">Selected Work</p>
+        <h2 class="js-mask-heading"><span class="mask-inner">Watch the film or read the full case study</span></h2>
+        <div class="yt-grid" id="yt-v2" style="margin-top:24px;"></div>
+      </div>
+    </section>
+
+    <!-- Buyer FAQ -->
+    <section id="faq" class="section" style="background:#080510;border-top:1px solid var(--border-subtle);">
+      <div class="container" style="max-width:860px;">
+        <p class="eyebrow">Buyer Questions</p>
+        <h2 class="js-mask-heading"><span class="mask-inner">Practical answers before discovery</span></h2>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>How much founder time is needed?</summary>
+            <p>We agree realistic time commitments during discovery—typically one focused recording block rather than constant ad-hoc filming.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How are shoots organised?</summary>
+            <p>You receive a clear prep sheet and shot plan ahead of time so filming stays calm, structured and fast.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do approvals work?</summary>
+            <p>Every deliverable goes through reviewable drafts with two included revision rounds before final sign-off.</p>
+          </details>
         </div>
       </div>
     </section>
 
-    <!-- CENTERED STACKED CONTACT -->
-    <section id="contact">
+    <section id="contact" class="section">
       <div class="container contact-centered">
-        <span class="eyebrow">Start a Conversation</span>
-        <h2 class="js-mask-heading"><span class="mask-line"><span class="mask-inner">What are you working on?</span></span></h2>
-        <p style="color:var(--muted);">
-          Jahronimo Ellis — Brighton-based founder with a background in Games Design, Interactive Technology, and Advanced 3D Animation, partnering with corporate and finance leaders.
-        </p>
         <div class="contact-details">
-          <a href="mailto:Anextvid@gmail.com">Anextvid@gmail.com</a>
-          <a href="https://wa.me/447538068550" target="_blank" rel="noopener">WhatsApp: 07538 068550</a>
-          <a href="https://theboldeststudio.com/" target="_blank" rel="noopener">Sister Company: THEBOLDEST.</a>
+          <p class="eyebrow">Discovery Conversation</p>
+          <h2 class="js-mask-heading"><span class="mask-inner">What are you working on?</span></h2>
+          <p class="lead">Share what you’re building, who needs to see it and what time you can commit.</p>
         </div>
-        <form id="contact-v2" class="form js-contact-form">
+        <form id="contact-v2" class="form js-contact-form" novalidate>
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;" aria-hidden="true" />
-          <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" />
-          <input type="email" name="email" placeholder="Work Email" required aria-label="Work Email" />
-          <select name="package" aria-label="What you need">
-            <option value="Ongoing Founder / B2B Content (3/6/12 Months)">Ongoing Founder / B2B Content (3/6/12 Months)</option>
-            <option value="SaaS Explainer &amp; Product Demo">SaaS Explainer &amp; Product Demo</option>
-            <option value="Video Production &amp; Motion Graphics">Video Production &amp; Motion Graphics</option>
-            <option value="Photography &amp; Brand Stills">Photography &amp; Brand Stills</option>
-          </select>
-          <select name="timeline" aria-label="When you need it">
-            <option value="ASAP / This month">Timeline: ASAP / This month</option>
-            <option value="Next 1–3 months">Timeline: Next 1–3 months</option>
-            <option value="Exploring options">Timeline: Just exploring</option>
-          </select>
-          <textarea name="message" placeholder="What are you working on?" required aria-label="Project details"></textarea>
-          <button type="submit" class="btn btn-neon" style="width:100%;">Talk through a project</button>
-          <div class="form-status" aria-live="polite"></div>
+          <div class="form-row">
+            <label for="c-name">Your name *</label>
+            <input id="c-name" name="name" type="text" required placeholder="Alex Morgan" />
+          </div>
+          <div class="form-row">
+            <label for="c-email">Work email *</label>
+            <input id="c-email" name="email" type="email" required placeholder="alex@company.com" />
+          </div>
+          <div class="form-row">
+            <label for="c-route">Preferred route</label>
+            <select id="c-route" name="service">
+              <option value="12-month-partnership">12-Month Content Partnership (Main Offer)</option>
+              <option value="one-off-production">One-Off Production (Brand Film / Demo / Photo)</option>
+              <option value="not-sure">Not sure yet — let's scope in discovery</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="c-msg">Project context *</label>
+            <textarea id="c-msg" name="message" rows="4" required placeholder="What you're building, who needs to see it, and target timeline..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-neon" style="width:100%;justify-content:center;">Talk through a project</button>
+          <p class="form-status" role="status" aria-live="polite" style="margin-top:12px;"></p>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- GIANT BOLD EDITORIAL FOOTER -->
   <footer class="mega-footer" id="v2-footer">
     <div class="container">
       <div class="mega-wordmark js-footer-wordmark" aria-hidden="true">ANEXTVID</div>
-      <div class="foot-flex">
-        <span>© 2026 ANEXTVID • Brighton, UK</span>
-        <div style="display:flex;gap:1.25rem;flex-wrap:wrap;">
-          <a href="#selected-work">Selected Work</a>
-          <a href="./services/b2b-linkedin-content/">B2B LinkedIn Content</a>
-          <a href="./watch/showreel/">Showreel Transcript</a>
-          <a href="#" class="js-terms-v2">Terms &amp; Conditions</a>
-          <a href="#" class="js-privacy-v2">Privacy &amp; Analytics</a>
-          <a href="https://theboldeststudio.com/" target="_blank" rel="noopener">THEBOLDEST.</a>
+      <div class="footer-row">
+        <span>© 2026 ANEXTVID • Brighton, UK • <a href="mailto:Anextvid@gmail.com">Anextvid@gmail.com</a></span>
+        <div class="footer-links">
+          <a href="./services/12-month-content-partnership/">12-Month Partnership</a>
+          <a href="./services/one-off-production/">One-Off Production</a>
+          <a href="./services/b2b-linkedin-content/">LinkedIn Content</a>
+          <a href="./watch/showreel/">Showreel</a>
+          <button type="button" id="terms-open-btn" class="footer-link-btn">Terms</button>
+          <button type="button" id="privacy-open-btn" class="footer-link-btn">Privacy</button>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="./shared/analytics.js"></script>
-  <script src="./shared/site-data.js"></script>
+  <!-- Accessible Legal / Privacy Dialog -->
+  <dialog id="legal-dialog" style="max-width:680px;width:92%;background:#110a1f;color:#f4f1ea;border:1px solid rgba(168,85,247,0.45);border-radius:16px;padding:24px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;">
+      <h3 id="legal-dialog-title" style="margin:0;">Information</h3>
+      <button type="button" id="legal-dialog-close" class="btn btn-ghost" style="padding:6px 12px;">Close</button>
+    </div>
+    <div id="legal-dialog-body" style="max-height:60vh;overflow:auto;font-size:14px;line-height:1.6;"></div>
+  </dialog>
+
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="./shared/analytics.js" defer></script>
+  <script src="./shared/site-data.js" defer></script>
+  <script src="./shared/interactive.js" defer></script>
   <script>
     window.addEventListener("DOMContentLoaded", () => {
-      initYouTubeFacades("#yt-v2");
-      initShowreelModal(".js-showreel-v2");
-      initTermsModal(".js-terms-v2");
-      initPrivacyModal(".js-privacy-v2");
-      initMobileMenu(".menu-toggle", "#v2-nav");
-      initContactForm("#contact-v2");
+      if (window.initHeroMediaToggle) window.initHeroMediaToggle("v2-hero-video", "hero-video-toggle");
+      if (window.initPausableTicker) window.initPausableTicker("v2-ticker-track", "ticker-toggle");
+      if (window.initFounderPortraitStudy) window.initFounderPortraitStudy("founder-portrait-stage");
+      if (window.initContactForm) window.initContactForm("#contact-v2");
+
+      // Selected Work cards with Watch Film + Case Study View Transitions
+      const ytEl = document.getElementById("yt-v2");
+      if (ytEl && window.ANEXTVID_DATA) {
+        const items = [
+          { ...window.ANEXTVID_DATA.videos.youtube[2], href: "./work/founder-b2b-system/", vt: "work-thumb-founder-b2b-system" },
+          { ...window.ANEXTVID_DATA.videos.youtube[1], href: "./work/commercial-social-campaign/", vt: "work-thumb-commercial-social-campaign" },
+          { ...window.ANEXTVID_DATA.videos.youtube[3], href: "./work/founder-b2b-system/", vt: "work-thumb-motion" },
+          { ...window.ANEXTVID_DATA.videos.youtube[4], href: "./work/commercial-social-campaign/", vt: "work-thumb-edit" }
+        ];
+        ytEl.innerHTML = items.map((v) => `
+          <article class="yt-card">
+            <a href="${v.href}" class="yt-thumb" style="display:block;text-decoration:none;">
+              <img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="${v.title}" width="480" height="360" loading="lazy" style="view-transition-name:${v.vt};" />
+              <span class="yt-play" aria-hidden="true">→</span>
+            </a>
+            <div class="yt-meta">
+              <span class="yt-cat">${v.category}</span>
+              <h3>${v.title}</h3>
+              <div class="yt-card-actions">
+                <button type="button" class="yt-action-btn yt-action-btn--play js-play-card" data-yt-id="${v.id}" data-title="${v.title}">Watch film</button>
+                <a href="${v.href}" class="yt-action-btn yt-action-btn--case">Read case study →</a>
+              </div>
+            </div>
+          </article>
+        `).join("");
+
+        ytEl.querySelectorAll(".js-play-card").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const card = btn.closest(".yt-card");
+            const thumb = card.querySelector(".yt-thumb");
+            if (window.mountTrackedYouTube) window.mountTrackedYouTube(thumb, btn.dataset.ytId, btn.dataset.title);
+          });
+        });
+      }
 
       const feat = document.getElementById("v2-hero-feature");
       if (feat) {
         const playFeat = () => {
-          if (feat.classList.contains("is-playing")) return;
-          const id = feat.getAttribute("data-yt-id");
-          window.mountTrackedYouTube(feat, id, "Featured Brand and Content Production");
-          feat.classList.add("is-playing");
+          if (feat.dataset.playing) return;
+          feat.dataset.playing = "1";
+          if (window.mountTrackedYouTube) window.mountTrackedYouTube(feat, feat.dataset.ytId, "ANEXTVID Featured Showreel");
         };
         feat.addEventListener("click", playFeat);
-        feat.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); playFeat(); }
+        feat.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); playFeat(); } });
+      }
+
+      // Terms & Privacy dialog (no dead # links)
+      const dialog = document.getElementById("legal-dialog");
+      const dTitle = document.getElementById("legal-dialog-title");
+      const dBody = document.getElementById("legal-dialog-body");
+      const dClose = document.getElementById("legal-dialog-close");
+      if (dialog && dClose) dClose.addEventListener("click", () => dialog.close());
+      const termsBtn = document.getElementById("terms-open-btn");
+      const privacyBtn = document.getElementById("privacy-open-btn");
+      if (termsBtn && dialog && window.ANEXTVID_DATA) {
+        termsBtn.addEventListener("click", () => {
+          dTitle.textContent = "Terms & Conditions";
+          dBody.innerHTML = window.ANEXTVID_DATA.termsHtml;
+          dialog.showModal();
+        });
+      }
+      if (privacyBtn && dialog) {
+        privacyBtn.addEventListener("click", () => {
+          dTitle.textContent = "Privacy & Cookieless Analytics";
+          dBody.innerHTML = "<p>ANEXTVID uses privacy-first, cookieless behavioural analytics (no tracking cookies, no PII). You can opt out anytime.</p>";
+          dialog.showModal();
         });
       }
 
-      const topbar = document.getElementById("v2-topbar");
-      if (topbar) {
-        const onScroll = () => topbar.classList.toggle("is-scrolled", window.scrollY > 36);
-        window.addEventListener("scroll", onScroll, { passive: true });
-        onScroll();
-      }
-
-      const spotCard = document.getElementById("v2-spotlight-card");
-      if (spotCard && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-        spotCard.addEventListener("pointermove", (e) => {
-          const rect = spotCard.getBoundingClientRect();
-          spotCard.style.setProperty("--mx", `${e.clientX - rect.left}px`);
-          spotCard.style.setProperty("--my", `${e.clientY - rect.top}px`);
-        });
-      }
-
-      const vid = document.getElementById("v2-hero-video");
-      const vidBtn = document.getElementById("v2-video-toggle");
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (vid && reduceMotion) {
-        vid.pause();
-        if (vidBtn) { vidBtn.setAttribute("aria-pressed", "true"); vidBtn.textContent = "Play background video"; }
-      }
-      if (vid && vidBtn) {
-        vidBtn.addEventListener("click", () => {
-          if (vid.paused) {
-            vid.play();
-            vidBtn.setAttribute("aria-pressed", "false");
-            vidBtn.textContent = "Pause background video";
-          } else {
-            vid.pause();
-            vidBtn.setAttribute("aria-pressed", "true");
-            vidBtn.textContent = "Play background video";
-          }
-        });
-      }
-
       if (!reduceMotion && window.gsap && window.ScrollTrigger) {
         gsap.registerPlugin(ScrollTrigger);
-
-        // Hero kinetic entrance + Clarity Strip boxes
-        gsap.from(".js-kinetic-hero .word", {
-          y: 36, opacity: 0, rotateX: -25, stagger: 0.07, duration: 0.7, ease: "power3.out"
-        });
-        gsap.from(".js-clarity-box", {
-          y: 24, opacity: 0, scale: 0.97, stagger: 0.1, duration: 0.6, delay: 0.25, ease: "power2.out"
-        });
-
-        // 1. Video frame expansion (#hero-feature)
         if (feat) {
           gsap.fromTo(feat,
             { width: "92%", borderRadius: "24px", boxShadow: "0 20px 50px rgba(0, 0, 0, 0.55)" },
-            {
-              width: "100%", borderRadius: "10px", boxShadow: "0 28px 80px rgba(124, 58, 237, 0.35)",
-              ease: "none",
-              scrollTrigger: { trigger: "#hero-feature", start: "top 88%", end: "center 52%", scrub: 0.55 }
-            }
+            { width: "100%", borderRadius: "10px", boxShadow: "0 28px 80px rgba(124, 58, 237, 0.35)", ease: "none",
+              scrollTrigger: { trigger: "#hero-feature", start: "top 88%", end: "center 52%", scrub: 0.55 } }
           );
         }
-
-        // 2. Headline mask reveals
         gsap.utils.toArray(".js-mask-heading .mask-inner").forEach((el) => {
-          gsap.fromTo(el,
-            { yPercent: 105, clipPath: "inset(0 0 100% 0)" },
-            {
-              yPercent: 0, clipPath: "inset(0 0 0% 0)", duration: 0.7, ease: "power3.out",
-              scrollTrigger: { trigger: el.closest("h2"), start: "top 88%", end: "bottom 12%", toggleActions: "play reverse play reverse" }
-            }
-          );
+          gsap.fromTo(el, { yPercent: 105, clipPath: "inset(0 0 100% 0)" }, {
+            yPercent: 0, clipPath: "inset(0 0 0% 0)", duration: 0.7, ease: "power3.out",
+            scrollTrigger: { trigger: el.closest("h2"), start: "top 88%", toggleActions: "play none none reverse" }
+          });
         });
-
-        // 3. Scroll-responsive ticker
-        const track = document.getElementById("v2-ticker-track");
-        if (track) {
-          let xPos = 0, scrollVel = 0;
-          const wrapWidth = () => track.firstElementChild ? track.firstElementChild.offsetWidth : 1000;
-          ScrollTrigger.create({
-            onUpdate: (self) => {
-              const v = self.getVelocity() * 0.008;
-              scrollVel = Math.max(-14, Math.min(14, v));
-            }
-          });
-          gsap.ticker.add(() => {
-            scrollVel *= 0.92;
-            if (Math.abs(scrollVel) < 0.02) scrollVel = 0;
-            if (scrollVel !== 0) {
-              xPos -= scrollVel;
-              const w = wrapWidth();
-              if (w > 0) xPos = ((xPos % w) - w) % w;
-              gsap.set(track, { x: xPos });
-            }
-          });
-        }
-
-        // 4. Bento card motion
-        if (window.matchMedia("(min-width: 860px)").matches) {
-          gsap.from(".js-bento-left", {
-            x: -44, opacity: 0.4,
-            scrollTrigger: { trigger: "#v2-bento", start: "top 88%", end: "center 55%", scrub: 0.6 }
-          });
-          gsap.from(".js-bento-right", {
-            x: 44, opacity: 0.4,
-            scrollTrigger: { trigger: "#v2-bento", start: "top 88%", end: "center 55%", scrub: 0.6 }
-          });
-        }
-
-        // Staggered box motion across Case Meta, Selected Work, Services, and Contact
-        const animateBoxGroup = (selector, triggerSel) => {
-          const els = gsap.utils.toArray(selector);
-          if (!els.length) return;
-          gsap.from(els, {
-            y: 30, opacity: 0.18, scale: 0.97, stagger: 0.09, duration: 0.6, ease: "power2.out",
-            scrollTrigger: { trigger: triggerSel, start: "top 86%", end: "bottom 15%", toggleActions: "play reverse play reverse" }
-          });
-        };
-        animateBoxGroup(".js-meta-box", "#v2-case-meta");
-        animateBoxGroup("#yt-v2 .yt-card", "#yt-v2");
-        animateBoxGroup(".js-service-card", "#v2-services-grid");
-        animateBoxGroup(".js-contact-form", "#contact");
-
-        // 5. Vector stroke drawing + assembling grid
         const assembleItems = gsap.utils.toArray(".js-assemble-item");
         const drawEls = gsap.utils.toArray("#v2-assemble .js-draw");
         drawEls.forEach((el) => {
@@ -515,29 +428,11 @@
           }
         });
         if (assembleItems.length) {
-          const tl = gsap.timeline({
-            scrollTrigger: { trigger: "#v2-assemble", start: "top 86%", end: "center 48%", scrub: 0.7 }
-          });
-          tl.from(assembleItems, {
-            y: (i) => (i % 2 === 0 ? 46 : -30),
-            x: (i) => (i < 2 ? -22 : 22),
-            rotation: (i) => (i % 2 === 0 ? -3 : 3),
-            opacity: 0.25, scale: 0.94, stagger: 0.08
-          }, 0);
-          if (drawEls.length) {
-            tl.to(drawEls, { strokeDashoffset: 0, stagger: 0.015, ease: "none" }, 0.05);
-          }
+          const tl = gsap.timeline({ scrollTrigger: { trigger: "#v2-assemble", start: "top 86%", end: "center 48%", scrub: 0.7 } });
+          tl.from(assembleItems, { y: 36, opacity: 0.25, scale: 0.95, stagger: 0.08 }, 0);
+          if (drawEls.length) tl.to(drawEls, { strokeDashoffset: 0, stagger: 0.015, ease: "none" }, 0.05);
         }
-
-        // 6. 2px page scroll progress bar + giant footer wordmark reveal
-        gsap.to("#v2-progress", {
-          scaleX: 1, ease: "none",
-          scrollTrigger: { trigger: document.documentElement, start: "top top", end: "bottom bottom", scrub: true }
-        });
-        gsap.from(".js-footer-wordmark", {
-          yPercent: 45, opacity: 0.12,
-          scrollTrigger: { trigger: "#v2-footer", start: "top 95%", end: "center 78%", scrub: 0.6 }
-        });
+        gsap.to("#v2-progress", { scaleX: 1, ease: "none", scrollTrigger: { trigger: document.documentElement, start: "top top", end: "bottom bottom", scrub: true } });
       }
     });
   </script>

@@ -2,17 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://anextvid.com/</loc>
-    <lastmod>2026-11-14</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://anextvid.com/services/b2b-linkedin-content/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <loc>https://anextvid.com/services/12-month-content-partnership/</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://anextvid.com/watch/showreel/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <loc>https://anextvid.com/services/one-off-production/</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://anextvid.com/services/b2b-linkedin-content/</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://anextvid.com/work/founder-b2b-system/</loc>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://anextvid.com/work/commercial-social-campaign/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://anextvid.com/watch/showreel/</loc>
+    <priority>0.75</priority>
   </url>
 </urlset>
