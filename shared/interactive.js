@@ -122,4 +122,78 @@
       if (!rafId) rafId = requestAnimationFrame(apply);
     });
   };
+
+  // 4. Accessible mobile menu toggle (<840px)
+  window.initMobileNav = function (toggleId, navId) {
+    const btn = document.getElementById(toggleId);
+    const nav = document.getElementById(navId);
+    if (!btn || !nav) return;
+
+    const setOpen = (open) => {
+      nav.classList.toggle("is-open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      btn.textContent = open ? "Close" : "Menu";
+    };
+
+    btn.addEventListener("click", () => setOpen(!nav.classList.contains("is-open")));
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setOpen(false));
+    });
+  };
+
+  // 5. Interchangeable B2B hero headlines + tested text entrance animation
+  const HERO_PHRASES = [
+    ["Show the work", "you’re already doing.", "Build trust", "every month."],
+    ["Turn real work", "into B2B video", "and LinkedIn", "authority."],
+    ["One calm shoot.", "Months of video,", "stills and", "founder trust."],
+    ["B2B video,", "product demos", "and LinkedIn", "that compounds."]
+  ];
+
+  window.initKineticHero = function (selector, defaultVariant) {
+    const h1 = document.querySelector(selector);
+    if (!h1) return { variant: "none", phraseIndex: 0 };
+
+    let idx = 0;
+    try {
+      const prev = parseInt(localStorage.getItem("anextvid_hero_idx") || "-1", 10);
+      idx = Number.isFinite(prev) ? (prev + 1) % HERO_PHRASES.length : 0;
+      localStorage.setItem("anextvid_hero_idx", String(idx));
+    } catch {}
+
+    const lines = HERO_PHRASES[idx];
+    h1.innerHTML = lines
+      .map((line, i) =>
+        i === lines.length - 1
+          ? `<span class="word accent-word">${line}</span>`
+          : `<span class="word">${line}</span>`
+      )
+      .join(" ");
+
+    const params = new URLSearchParams(window.location.search);
+    const variant = params.get("anim") || defaultVariant || "blur-rise";
+
+    if (reduceMotion || !window.gsap) {
+      return { variant: "reduced", phraseIndex: idx };
+    }
+
+    const words = h1.querySelectorAll(".word");
+    if (variant === "word-stagger") {
+      window.gsap.from(words, {
+        y: 28, opacity: 0, rotateX: -18, stagger: 0.06, duration: 0.62, ease: "power3.out", clearProps: "transform"
+      });
+    } else if (variant === "mask-wipe") {
+      window.gsap.fromTo(words,
+        { yPercent: 90, clipPath: "inset(0 0 100% 0)", opacity: 0.2 },
+        { yPercent: 0, clipPath: "inset(0 0 0% 0)", opacity: 1, stagger: 0.08, duration: 0.65, ease: "power3.out", clearProps: "transform,clipPath" }
+      );
+    } else {
+      // blur-rise: crisp editorial entrance with zero layout shift
+      window.gsap.fromTo(words,
+        { y: 18, opacity: 0, filter: "blur(6px)" },
+        { y: 0, opacity: 1, filter: "blur(0px)", stagger: 0.07, duration: 0.6, ease: "power2.out", clearProps: "transform,filter" }
+      );
+    }
+
+    return { variant, phraseIndex: idx };
+  };
 })();
