@@ -98,7 +98,7 @@ export async function onRequestPost(context) {
     },
     body: JSON.stringify({
       from: env.ENQUIRY_FROM || "ANEXTVID Website <onboarding@resend.dev>",
-      to: [env.ENQUIRY_TO || "Anextvid@gmail.com"],
+      to: [(env.ENQUIRY_TO || "anextvid@gmail.com").toLowerCase()],
       reply_to: email,
       subject: `ANEXTVID Enquiry: ${service} — ${name}`,
       text: textBody
